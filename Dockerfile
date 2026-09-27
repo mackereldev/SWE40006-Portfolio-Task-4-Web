@@ -13,4 +13,9 @@ RUN pip install --no-cache-dir .
 RUN useradd app
 USER app
 
-CMD ["flask", "--app", "swe40006_portfolio_task_4", "run", "--host", "0.0.0.0", "--port", "5000"]
+# Configure Flask
+ENV FLASK_APP=swe40006_portfolio_task_4
+ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_PORT=5000
+
+CMD ["flask", "run"]
