@@ -1,0 +1,19 @@
+[project]
+name = "swe40006-portfolio-task-4"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "mackereldev", email = "sabashaw.home@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "flask>=3.1.3",
+]
+
+[project.scripts]
+swe40006-portfolio-task-4 = "swe40006_portfolio_task_4:main"
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"
