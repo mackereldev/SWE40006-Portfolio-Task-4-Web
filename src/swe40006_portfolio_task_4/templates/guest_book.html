@@ -1,0 +1,21 @@
+<!doctype html>
+<h1>Guestbook</h1>
+<form action="{{ url_for('create_entry') }}" method="post"
+      style="display: flex; flex-direction: column; width: 500px; gap: 12px; margin-bottom: 48px;">
+    <input type="text" name="author" required placeholder="Your name" />
+    <textarea name="body" rows="5" required placeholder="Write your message here!"></textarea>
+    <button type="submit">Submit</button>
+</form>
+<h2>Entries</h2>
+<div style="display: flex; flex-direction: column; width: 500px; gap: 12px">
+    {% for entry in entries %}
+    <div
+         style="display: flex; flex-direction: column; border: solid 1px #d6d6d6; border-radius: 2px;">
+        <div style="display: flex; justify-content: space-between; margin: 2px 4px; border-bottom: solid 1px #d6d6d6;">
+            <span style="color: rgb(114, 114, 114)">{{ entry.author }}</span>
+            <span style="color: rgb(114, 114, 114)">{{ entry.created.strftime("%Y-%m-%d %H:%M:%S UTC") }}</span>
+        </div>
+        <p style="margin: 2px 4px">{{ entry.body }}</p>
+    </div>
+    {% endfor %}
+</div>
